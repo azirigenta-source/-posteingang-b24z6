@@ -1,0 +1,270 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Posteingang B24Z6</title>
+<style>
+/* Layout: Outlook-Web-Raster: App-Leiste links, Ordner, Nachrichtenliste, Lesebereich. Akzent Pink. */
+:root{
+  --bg:#fbf3f6; --surface:#ffffff; --surface-2:#fdf6f9; --fg:#2a1a22; --muted:#6f5560;
+  --line:#ecd9e1; --accent:#c2185b; --accent-strong:#9c1049; --accent-soft:#fbe0ec; --topbar:#c2185b; --topbar-fg:#ffffff;
+  --sel:#fbe0ec; --hover:#f7e9ef; --unread:#c2185b; --avatar:#ad1457; --warn:#a4262c;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#1c1217; --surface:#241a1f; --surface-2:#2a1f25; --fg:#f3e6ec; --muted:#b79aa7; --line:#3d2b34;
+  --accent:#f06fa4; --accent-strong:#ff8fba; --accent-soft:#4a1f33; --topbar:#8e1747; --topbar-fg:#ffffff;
+  --sel:#4a1f33; --hover:#31232a; --unread:#f06fa4; --avatar:#c2185b; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --bg:#1c1217; --surface:#241a1f; --surface-2:#2a1f25; --fg:#f3e6ec; --muted:#b79aa7; --line:#3d2b34;
+  --accent:#f06fa4; --accent-strong:#ff8fba; --accent-soft:#4a1f33; --topbar:#8e1747; --topbar-fg:#ffffff;
+  --sel:#4a1f33; --hover:#31232a; --unread:#f06fa4; --avatar:#c2185b; color-scheme:dark;}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:"Segoe UI","Segoe UI Web (West European)",-apple-system,system-ui,Roboto,"Helvetica Neue",sans-serif;font-size:14px;overflow:hidden}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+.app{height:100%;display:grid;grid-template-rows:48px 1fr}
+/* Top bar */
+.top{background:var(--topbar);color:var(--topbar-fg);display:flex;align-items:center;gap:12px;padding:0 12px 0 8px;min-width:0}
+.top .icon-btn{width:40px;height:40px;display:grid;place-items:center;border-radius:4px;color:var(--topbar-fg)}
+.top .icon-btn:hover{background:rgba(255,255,255,.18)}
+.brand{font-weight:600;font-size:15px;white-space:nowrap}
+.search{flex:1;max-width:560px;margin:0 auto;position:relative;min-width:0}
+.search input{width:100%;height:32px;border-radius:4px;border:0;padding:0 12px 0 34px;background:rgba(255,255,255,.92);color:#2a1a22;font:inherit}
+.search input::placeholder{color:#7a5f6b}
+.search svg{position:absolute;left:10px;top:7px;color:#7a5f6b;width:18px;height:18px}
+.top .right{display:flex;align-items:center;gap:2px;margin-left:auto}
+.me{width:32px;height:32px;border-radius:50%;background:#fff;color:var(--accent-strong);display:grid;place-items:center;font-weight:600;font-size:12px;margin-left:6px}
+
+/* Body */
+.main{display:grid;grid-template-columns:48px 220px 360px minmax(0,1fr);min-height:0}
+.rail{background:var(--surface-2);border-right:1px solid var(--line);display:flex;flex-direction:column;align-items:center;padding-top:6px;gap:2px}
+.rail button{width:40px;height:40px;display:grid;place-items:center;border-radius:4px;color:var(--muted);position:relative}
+.rail button:hover{background:var(--hover)}
+.rail button.on{color:var(--accent)}
+.rail button.on::before{content:"";position:absolute;left:-4px;top:9px;bottom:9px;width:3px;border-radius:2px;background:var(--accent)}
+
+.folders{background:var(--surface-2);border-right:1px solid var(--line);overflow:auto;padding:8px 0}
+.folders h3{margin:10px 16px 4px;font-size:12px;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:6px}
+.folder{display:flex;align-items:center;gap:10px;width:100%;padding:6px 16px;text-align:left;color:var(--fg);border-radius:0;position:relative}
+.folder:hover{background:var(--hover)}
+.folder.on{background:var(--sel);font-weight:600}
+.folder.on::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:3px;background:var(--accent);border-radius:0 2px 2px 0}
+.folder .n{margin-left:auto;color:var(--accent);font-weight:600;font-size:12px}
+.folder svg{color:var(--muted)}
+.folder.on svg{color:var(--accent)}
+.newmail{margin:6px 12px 8px;display:flex;align-items:center;justify-content:center;gap:8px;height:34px;border-radius:4px;background:var(--accent);color:#fff;font-weight:600;width:calc(100% - 24px)}
+.newmail:hover{background:var(--accent-strong)}
+.newmail svg{stroke:#fff}
+
+.list{background:var(--surface);border-right:1px solid var(--line);display:flex;flex-direction:column;min-width:0;min-height:0}
+.list-head{padding:10px 16px 0}
+.list-head h2{margin:0 0 6px;font-size:18px;font-weight:600}
+.tabs{display:flex;gap:18px;border-bottom:1px solid var(--line)}
+.tabs button{padding:6px 0 8px;color:var(--muted);position:relative}
+.tabs button.on{color:var(--accent);font-weight:600}
+.tabs button.on::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--accent)}
+.items{overflow:auto;flex:1}
+.item{display:grid;grid-template-columns:36px minmax(0,1fr);gap:10px;padding:10px 14px 10px 12px;width:100%;text-align:left;border-bottom:1px solid var(--line);position:relative}
+.item:hover{background:var(--hover)}
+.item.on{background:var(--sel)}
+.item.unread::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--unread)}
+.av{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:600;font-size:12px;background:var(--avatar)}
+.av.a2{background:#7b5f9a}.av.a3{background:#3b7a78}.av.a4{background:#a8672a}
+.row1,.row3{display:flex;gap:8px;align-items:baseline;min-width:0}
+.from{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.item:not(.unread) .from{font-weight:400}
+.date{margin-left:auto;color:var(--muted);font-size:12px;white-space:nowrap}
+.unread .date{color:var(--accent);font-weight:600}
+.subj{font-weight:600;color:var(--accent-strong);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.item:not(.unread) .subj{font-weight:400;color:var(--fg)}
+.prev{color:var(--muted);font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* Reading pane */
+.read{background:var(--surface);display:flex;flex-direction:column;min-width:0;min-height:0}
+.cmd{display:flex;align-items:center;gap:2px;padding:6px 12px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.cmd button{display:flex;align-items:center;gap:6px;padding:6px 10px;border-radius:4px}
+.cmd button:hover{background:var(--hover)}
+.cmd button.p{color:var(--accent)}
+.cmd .sep{width:1px;height:20px;background:var(--line);margin:0 6px}
+.msg{overflow:auto;flex:1;padding:20px 28px 28px}
+.msg h1{margin:0 0 16px;font-size:20px;font-weight:600;line-height:1.3;overflow-wrap:anywhere}
+.meta{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:12px;align-items:start}
+.meta .av{width:44px;height:44px;font-size:15px}
+.meta .who{font-weight:600}
+.meta .who small{font-weight:400;color:var(--muted)}
+.meta .to{color:var(--muted);margin-top:2px;overflow-wrap:anywhere}
+.meta .when{color:var(--muted);font-size:12px;text-align:right;white-space:nowrap}
+.meta .acts{display:flex;gap:2px;justify-content:flex-end;margin-top:4px;color:var(--muted)}
+.meta .acts button{width:28px;height:28px;display:grid;place-items:center;border-radius:4px}
+.meta .acts button:hover{background:var(--hover)}
+.body{margin-top:22px;max-width:78ch;font-size:14.5px;line-height:1.55}
+.body p{margin:0 0 16px}
+.sig{margin-top:2px}
+
+.reply{margin:24px 0 0;max-width:78ch;border:1px solid var(--line);border-radius:6px;background:var(--surface-2)}
+.reply[hidden]{display:none}
+.reply .hd{padding:8px 12px;border-bottom:1px solid var(--line);color:var(--muted);font-size:13px}
+.reply textarea{display:block;width:100%;min-height:110px;border:0;background:transparent;color:var(--fg);padding:12px;font:inherit;resize:vertical}
+.reply .ft{display:flex;gap:8px;padding:8px 12px;border-top:1px solid var(--line)}
+.btn{padding:6px 16px;border-radius:4px;font-weight:600}
+.btn.pri{background:var(--accent);color:#fff}.btn.pri:hover{background:var(--accent-strong)}
+.btn.sec{border:1px solid var(--line)}.btn.sec:hover{background:var(--hover)}
+.quickbar{margin-top:20px;display:flex;gap:8px;flex-wrap:wrap}
+.quickbar button{border:1px solid var(--line);border-radius:4px;padding:6px 14px;display:flex;gap:8px;align-items:center}
+.quickbar button:hover{background:var(--hover)}
+
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--fg);color:var(--surface);padding:10px 18px;border-radius:6px;font-size:13px;box-shadow:0 6px 24px rgba(0,0,0,.25)}
+.toast[hidden]{display:none}
+
+@media (max-width:1100px){.main{grid-template-columns:48px 320px minmax(0,1fr)}.folders{display:none}}
+@media (max-width:760px){
+  .main{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,38%) minmax(0,1fr)}
+  .rail{display:none}
+  .list{border-right:0;border-bottom:1px solid var(--line)}
+  .msg{padding:16px}
+  .brand{display:none}
+  .meta{grid-template-columns:40px minmax(0,1fr)}
+  .meta .when{grid-column:2;text-align:left}
+  .meta .acts{justify-content:flex-start}
+}
+@media (prefers-reduced-motion:no-preference){.toast{animation:up .18s ease-out}@keyframes up{from{opacity:0;transform:translate(-50%,6px)}to{opacity:1;transform:translate(-50%,0)}}}
+</style>
+
+<div class="app">
+  <header class="top">
+    <button class="icon-btn" aria-label="App-Startmenü"><svg viewBox="0 0 24 24" style="stroke-width:2"><circle cx="5" cy="5" r="1.2"/><circle cx="12" cy="5" r="1.2"/><circle cx="19" cy="5" r="1.2"/><circle cx="5" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="19" cy="12" r="1.2"/><circle cx="5" cy="19" r="1.2"/><circle cx="12" cy="19" r="1.2"/><circle cx="19" cy="19" r="1.2"/></svg></button>
+    <span class="brand">Mail</span>
+    <label class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg><input id="q" type="search" placeholder="Suchen" autocomplete="off"></label>
+    <div class="right">
+      <button class="icon-btn" aria-label="Kalender"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></button>
+      <button class="icon-btn" aria-label="Benachrichtigungen"><svg viewBox="0 0 24 24"><path d="M6 17V11a6 6 0 1112 0v6l1.5 2h-15zM10 21h4"/></svg></button>
+      <button class="icon-btn" aria-label="Einstellungen"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></button>
+      <div class="me" title="Einkaufsteam B24Z6">B6</div>
+    </div>
+  </header>
+
+  <div class="main">
+    <nav class="rail" aria-label="Apps">
+      <button class="on" aria-label="E-Mail"><svg viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="M4 7l8 6 8-6"/></svg></button>
+      <button aria-label="Kalender"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></button>
+      <button aria-label="Personen"><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3"/><path d="M3.5 19c.6-3 2.8-4.5 5.5-4.5s4.9 1.5 5.5 4.5M16 6.5a3 3 0 010 5.5M17.5 14.8c1.7.5 2.7 2 3 4.2"/></svg></button>
+      <button aria-label="Aufgaben"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M8.5 12.3l2.5 2.5 4.5-5"/></svg></button>
+    </nav>
+
+    <aside class="folders" aria-label="Ordner">
+      <button class="newmail" id="newmail"><svg viewBox="0 0 24 24"><path d="M4 20l1-4L16.5 4.5a2 2 0 013 3L8 19zM14.5 6.5l3 3"/></svg>Neue E-Mail</button>
+      <h3>Favoriten</h3>
+      <button class="folder on"><svg viewBox="0 0 24 24"><path d="M4 13l2.5-7h11L20 13v5H4zM4 13h5l1 2h4l1-2h5"/></svg>Posteingang<span class="n" id="unreadN">1</span></button>
+      <button class="folder"><svg viewBox="0 0 24 24"><path d="M4 12l16-7-5 15-3-6z"/></svg>Gesendete Elemente</button>
+      <button class="folder"><svg viewBox="0 0 24 24"><path d="M5 4h10l4 4v12H5zM14 4v5h5"/></svg>Entwürfe</button>
+      <h3>Einkaufsteam B24Z6</h3>
+      <button class="folder"><svg viewBox="0 0 24 24"><path d="M3.5 7.5h6l2 2h9v9h-17z"/></svg>Angebote</button>
+      <button class="folder"><svg viewBox="0 0 24 24"><path d="M3.5 7.5h6l2 2h9v9h-17z"/></svg>Bestellungen</button>
+      <button class="folder"><svg viewBox="0 0 24 24"><path d="M3.5 7.5h6l2 2h9v9h-17z"/></svg>Lieferanten</button>
+      <button class="folder"><svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg>Gelöschte Elemente</button>
+      <button class="folder"><svg viewBox="0 0 24 24"><path d="M3.5 7.5h6l2 2h9v9h-17z"/></svg>Archiv</button>
+    </aside>
+
+    <section class="list" aria-label="Nachrichtenliste">
+      <div class="list-head">
+        <h2>Posteingang</h2>
+        <div class="tabs"><button class="on">Fokussiert</button><button>Andere</button></div>
+      </div>
+      <div class="items" id="items" role="list"></div>
+    </section>
+
+    <section class="read" aria-live="polite">
+      <div class="cmd">
+        <button class="p" id="cmdReply"><svg viewBox="0 0 24 24"><path d="M10 6L4 12l6 6M4 12h10a6 6 0 016 6"/></svg>Antworten</button>
+        <button id="cmdAll"><svg viewBox="0 0 24 24"><path d="M9 6L3 12l6 6M14 7l-5 5 5 5M10 12h5a5 5 0 015 5"/></svg>Allen antworten</button>
+        <button id="cmdFwd"><svg viewBox="0 0 24 24"><path d="M14 6l6 6-6 6M20 12H10a6 6 0 00-6 6"/></svg>Weiterleiten</button>
+        <span class="sep"></span>
+        <button><svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg>Löschen</button>
+        <button><svg viewBox="0 0 24 24"><path d="M4 6h16v4H4zM6 10v9h12v-9M10 14h4"/></svg>Archivieren</button>
+      </div>
+      <div class="msg" id="msg"></div>
+    </section>
+  </div>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+var MAILS=[
+ {id:1,unread:true,ini:"MK",av:"",from:"Mara Klein, Office Management",short:"Mara Klein, Office Management",to:"Einkaufsteam B24Z6",date:"Di 17:08",full:"Di 06.10.2026 17:08",
+  subj:"Bitte neue Bürostühle beschaffen",
+  prev:"Hallo zusammen, für den neu eingerichteten Projektbereich benötigen wir 20 ergonomische Bürostühle.",
+  body:["Hallo zusammen,",
+   "für den neu eingerichteten Projektbereich benötigen wir 20 ergonomische Bürostühle. Die Stühle sollen höhenverstellbar sein, eine verstellbare Rückenlehne besitzen und für längeres Sitzen geeignet sein.",
+   "Bitte holt Angebote ein. Die Lieferung soll spätestens bis zum 23.10.2026 erfolgen. Das Budget liegt bei maximal 5.500,00 € netto."],
+  sig:["Viele Grüße","Mara"]},
+ {id:2,unread:false,ini:"IT",av:"a2",from:"IT-Service",short:"IT-Service",to:"Einkaufsteam B24Z6",date:"Di 11:20",full:"Di 06.10.2026 11:20",
+  subj:"Wartungsfenster am Wochenende",
+  prev:"Am Samstag ist das Dateiserver-Laufwerk zeitweise nicht erreichbar.",
+  body:["Hallo zusammen,","am Samstag ist das Dateiserver-Laufwerk zeitweise nicht erreichbar. Bitte speichert offene Dokumente vorher ab."],sig:["Viele Grüße","Euer IT-Service"]},
+ {id:3,unread:false,ini:"FB",av:"a3",from:"Finanzbuchhaltung",short:"Finanzbuchhaltung",to:"Einkaufsteam B24Z6",date:"Mo 15:42",full:"Mo 05.10.2026 15:42",
+  subj:"Rechnungsfreigabe Oktober",
+  prev:"Bitte denkt an die Freigabe der offenen Rechnungen bis Monatsende.",
+  body:["Hallo zusammen,","bitte denkt an die Freigabe der offenen Rechnungen bis Monatsende."],sig:["Viele Grüße","Finanzbuchhaltung"]},
+ {id:4,unread:false,ini:"HR",av:"a4",from:"Personalabteilung",short:"Personalabteilung",to:"Alle Mitarbeitenden",date:"Fr 09:05",full:"Fr 02.10.2026 09:05",
+  subj:"Erinnerung: Urlaubsplanung",
+  prev:"Bitte tragt eure Urlaubswünsche für das vierte Quartal ein.",
+  body:["Hallo zusammen,","bitte tragt eure Urlaubswünsche für das vierte Quartal ein."],sig:["Viele Grüße","Personalabteilung"]}
+];
+var cur=1;
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function byId(i){return MAILS.filter(function(m){return m.id===i})[0]}
+function renderList(){
+  var q=document.getElementById("q").value.toLowerCase();
+  var h="";
+  MAILS.forEach(function(m){
+    if(q&&(m.from+m.subj+m.prev).toLowerCase().indexOf(q)<0)return;
+    h+='<button class="item'+(m.unread?' unread':'')+(m.id===cur?' on':'')+'" data-id="'+m.id+'" role="listitem">'+
+      '<span class="av '+m.av+'">'+m.ini+'</span><span style="min-width:0">'+
+      '<span class="row1"><span class="from">'+esc(m.from)+'</span><span class="date">'+m.date+'</span></span>'+
+      '<span class="row1" style="display:flex"><span class="subj">'+esc(m.subj)+'</span></span>'+
+      '<span class="row3" style="display:flex"><span class="prev">'+esc(m.prev)+'</span></span></span></button>';
+  });
+  document.getElementById("items").innerHTML=h||'<p style="padding:16px;color:var(--muted)">Keine Ergebnisse.</p>';
+  var n=MAILS.filter(function(m){return m.unread}).length;
+  document.getElementById("unreadN").textContent=n?n:"";
+}
+function renderMsg(){
+  var m=byId(cur);
+  var body=m.body.map(function(p){return "<p>"+esc(p)+"</p>"}).join("");
+  var sig='<p class="sig">'+m.sig.map(esc).join("<br>")+"</p>";
+  document.getElementById("msg").innerHTML=
+   '<h1>'+esc(m.subj)+'</h1>'+
+   '<div class="meta"><span class="av '+m.av+'">'+m.ini+'</span>'+
+   '<div><div class="who">'+esc(m.from)+'</div><div class="to">An: '+esc(m.to)+'</div></div>'+
+   '<div><div class="when">'+m.full+'</div></div></div>'+
+   '<div class="body">'+body+sig+'</div>'+
+   '<div class="quickbar"><button data-q="reply"><svg viewBox="0 0 24 24"><path d="M10 6L4 12l6 6M4 12h10a6 6 0 016 6"/></svg>Antworten</button><button data-q="fwd"><svg viewBox="0 0 24 24"><path d="M14 6l6 6-6 6M20 12H10a6 6 0 00-6 6"/></svg>Weiterleiten</button></div>'+
+   '<div class="reply" id="reply" hidden><div class="hd" id="replyHd"></div><textarea id="replyTxt" aria-label="Antwort schreiben" placeholder="Nachricht schreiben"></textarea><div class="ft"><button class="btn pri" id="send">Senden</button><button class="btn sec" id="discard">Verwerfen</button></div></div>';
+}
+function toast(t){var el=document.getElementById("toast");el.textContent=t;el.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(function(){el.hidden=true},2600)}
+function openReply(kind){
+  var m=byId(cur),r=document.getElementById("reply");
+  if(!r)return;
+  r.hidden=false;
+  document.getElementById("replyHd").textContent=(kind==="fwd"?"Weiterleiten: ":"An: ")+(kind==="fwd"?"":m.short)+(kind==="fwd"?"AW: "+m.subj:"  ·  Betreff: AW: "+m.subj);
+  document.getElementById("replyTxt").focus();
+  r.scrollIntoView({block:"nearest"});
+}
+document.getElementById("items").addEventListener("click",function(e){
+  var b=e.target.closest(".item");if(!b)return;
+  cur=+b.dataset.id;byId(cur).unread=false;renderList();renderMsg();
+});
+document.getElementById("msg").addEventListener("click",function(e){
+  var q=e.target.closest("[data-q]");if(q){openReply(q.dataset.q);return}
+  if(e.target.id==="discard"){document.getElementById("reply").hidden=true;return}
+  if(e.target.id==="send"){document.getElementById("reply").hidden=true;toast("Antwort im Mockup gesendet")}
+});
+["cmdReply","cmdAll"].forEach(function(id){document.getElementById(id).addEventListener("click",function(){openReply("reply")})});
+document.getElementById("cmdFwd").addEventListener("click",function(){openReply("fwd")});
+document.getElementById("newmail").addEventListener("click",function(){toast("Neue E-Mail ist in diesem Mockup nicht verfügbar")});
+document.getElementById("q").addEventListener("input",renderList);
+renderList();renderMsg();
+</script>
+
+</body></html>
